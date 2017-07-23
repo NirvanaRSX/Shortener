@@ -1,0 +1,33 @@
+body {
+    background: linear-gradient(45deg, #EECFBA, #C5DDE8);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background-color: orange;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+button {
+    width: 180px;
+    padding: 5px;
+    border-radius: 5px;
+    background: radial-gradient(circle at 65% 15%, #edff00, darkred);
+    border: 1px solid gray;
+    margin: 20px auto;
+    color: #3a2f2f
+}

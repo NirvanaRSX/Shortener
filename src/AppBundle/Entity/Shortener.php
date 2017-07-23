@@ -1,0 +1,103 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
+/**
+ * Shortener
+ *
+ * @ORM\Table(name="shortener")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\ShortenerRepository")
+ */
+class Shortener
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     *
+     * @Assert\Url(
+     *      message = "url must be looks like 'http://exapmle.com'  =)",
+     *     protocols = {"http", "https"},
+     * )
+     *
+     * @ORM\Column(name="url", type="string", length=255)
+     */
+    private $url;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="short_url", type="string", length=255, unique=true,nullable=true)
+     */
+    private $shortUrl;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set url
+     *
+     * @param string $url
+     *
+     * @return Shortener
+     */
+    public function setUrl($url)
+    {
+        $this->url = $url;
+
+        return $this;
+    }
+
+    /**
+     * Get url
+     *
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    /**
+     * Set shortUrl
+     *
+     * @param string $shortUrl
+     *
+     * @return Shortener
+     */
+    public function setShortUrl($shortUrl)
+    {
+        $this->shortUrl = $shortUrl;
+
+        return $this;
+    }
+
+    /**
+     * Get shortUrl
+     *
+     * @return string
+     */
+    public function getShortUrl()
+    {
+        return $this->shortUrl;
+    }
+}
