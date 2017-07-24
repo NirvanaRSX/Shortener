@@ -24,9 +24,6 @@ class DefaultController extends Controller
         if ($form->isValid() && $form->isSubmitted()) {
 
             $data = $form->getData();
-//            dump($data);
-//            dump($data->getUrl());
-//            die();
 
             $exist_url = $this->getDoctrine()->getRepository('AppBundle:Shortener')->findOneBy([
                'url' => $data->getUrl()
