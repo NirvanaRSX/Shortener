@@ -38,9 +38,7 @@ class DefaultController extends Controller
 
                 $em->flush();
             }
-
-
-
+            
             return $this->render('AppBundle:main:index.html.twig',[
                 'form' => $form->createView(),
                 'newUrl' => $current_url
