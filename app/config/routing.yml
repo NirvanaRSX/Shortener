@@ -1,3 +1,9 @@
 app:
     resource: '@AppBundle/Resources/config/routing.yml'
     prefix:   /
+
+show:
+    path:     /{shortUrl}
+    defaults: { _controller: AppBundle:Default:show }
+    requirements:
+        methods: GET

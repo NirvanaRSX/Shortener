@@ -16,7 +16,7 @@
     </div>
     {% if newUrl is defined %}
         <div class="container">
-            <a href="{{ newUrl.url }}">{{ newUrl.shortUrl }}</a>
+            <a href="{{ path('show',{shortUrl: newUrl.shortUrl}) }}">{{ newUrl.shortUrl }}</a>
         </div>
     {% endif %}
 {% endblock %}
