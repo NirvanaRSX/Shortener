@@ -10,4 +10,3 @@ parameters:
     mailer_user: null
     mailer_password: null
     secret: a11stars
-    env(DB_PASSWORD): a11stars
